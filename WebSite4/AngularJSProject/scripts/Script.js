@@ -6,5 +6,11 @@ var myApp = angular.module("myModule", []);
 //Create a controller and Instalizing into the module
 
 myApp.controller("cntrl", function ($scope) {
-    $scope.Message = "My Message!!!";
+    var courses = {
+        courseOne: ".NET",
+        courseTwo: "C#",
+        courseThree: "Java"
+
+    };
+    $scope.courses = courses;
 });

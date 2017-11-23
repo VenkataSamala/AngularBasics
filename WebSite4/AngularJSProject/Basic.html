@@ -6,15 +6,11 @@
     <script src="Scripts/Script.js"></script>
     <meta charset="utf-8" />
 </head>
-<body ng-controller="cntrl">
-<div>
-   Course 1: {{courses.courseOne}}
-</div>
-<div>
-    Course 2: {{courses.courseTwo}}
-</div>
-<div>
-    Course 3: {{courses.courseThree}}
+<body>
+<div ng-controller="cntrl">
+    <div>Name of the Shoes: {{shoes.name}}</div>
+    <div>Brand of the Shoes: {{shoes.company}}</div>
+    <div><img ng-src="{{shoes.image}}" style="height: 150px; width: 200px" alt="{{shoes.name + 'Shoes'}}" /></div>
 </div>
 </body>
 </html>

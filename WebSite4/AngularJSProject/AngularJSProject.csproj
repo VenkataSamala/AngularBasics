@@ -95,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Basic.html" />
+    <Content Include="Images\Nike.jpg" />
+    <Content Include="Images\Addidas.jpg" />
+    <Content Include="Images\AirMax.jpg" />
     <Content Include="Scripts\Script.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">

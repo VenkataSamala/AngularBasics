@@ -5,12 +5,11 @@
 //Chaining Controller to module itself
 var myApp = angular.module("myModule", [])
 .controller("cntrl", function ($scope) {
-        var courses = {
-            courseOne: ".NET",
-            courseTwo: "C#",
-            courseThree: "Java"
-
+        var shoes = {
+            name: "Air Max",
+            company: "Nike",
+            image: "/Images/AirMax.jpg"
         };
-        $scope.courses = courses;
+        $scope.shoes = shoes;
     });
 

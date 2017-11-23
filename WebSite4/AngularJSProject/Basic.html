@@ -4,18 +4,31 @@
     <title></title>
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/Script.js"></script>
+    <link href="Scripts/StyleSheet1.css" rel="stylesheet" />
     <meta charset="utf-8" />
 </head>
 <body>
 <div ng-controller="cntrl">
-    <ul>
-        <li ng-repeat="st in std">
-            {{st.name}}
-            <ul>
-            <li ng-repeat="sport in st.Sports">{{sport.name}}</li>
-            </ul>
-        </li>
-    </ul>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Likes</th>
+            <th>Dislikes</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="course in courseCounter">
+        <tr>
+            <td>{{course.Name}}</td>
+            <td>{{course.Likes}}</td>
+            <td>{{course.DisLikes}}</td>
+            <td>
+                <input type="button" value="like" ng-click="likeCounter(course)" />
+                <input type="button" value="dislike" ng-click="dislikeCounter(course)"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

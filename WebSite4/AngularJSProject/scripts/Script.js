@@ -6,14 +6,20 @@
 var myApp = angular.module("myModule", [])
     .controller("cntrl",
         function($scope) {
-            var std = [
-                { name: "India", Sports: [{ name: "Cricket" }, {name: "Hockey" }] },
-                { name: "USA", Sports: [{ name: "Football" }, {name: "Soccer" }] },
-                {
-                    name: "Brazil",
-                    Sports: [{ name: "Football" },{ name: "Vollyball" }]
-                }
+            var courseCounter = [
+                { Name: "C#", Likes: 0, DisLikes: 0 },
+                { Name: "Java", Likes: 0, DisLikes: 0 },
+                { Name: "VB.NET", Likes: 0, DisLikes: 0 }
             ];
-            $scope.std = std;
+                
+            $scope.courseCounter = courseCounter;
+
+            $scope.likeCounter = function(course) {
+                course.Likes++;
+            };
+
+            $scope.dislikeCounter = function(course) {
+                course.DisLikes++;
+            };
         });
 

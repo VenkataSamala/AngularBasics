@@ -8,9 +8,14 @@
 </head>
 <body>
 <div ng-controller="cntrl">
-    <input type="text" ng-model="Message" value="" />
-    <br />
-    {{Message}}
+    <ul>
+        <li ng-repeat="st in std">
+            {{st.name}}
+            <ul>
+            <li ng-repeat="sport in st.Sports">{{sport.name}}</li>
+            </ul>
+        </li>
+    </ul>
 </div>
 </body>
 </html>

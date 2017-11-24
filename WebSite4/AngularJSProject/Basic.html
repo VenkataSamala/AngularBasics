@@ -9,23 +9,24 @@
 </head>
 <body>
 <div ng-controller="cntrl">
+    Number of Rows: <input type="number" step="1" min="0" max="5" ng-model="rowFilter" />
     <table>
         <thead>
         <tr>
             <th>Name</th>
-            <th>Likes</th>
-            <th>Dislikes</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Salary (numerics)</th>
+            <th>Salary (currency)</th>
         </tr>
         </thead>
-        <tbody ng-repeat="course in courseCounter">
-        <tr>
-            <td>{{course.Name}}</td>
-            <td>{{course.Likes}}</td>
-            <td>{{course.DisLikes}}</td>
-            <td>
-                <input type="button" value="like" ng-click="likeCounter(course)" />
-                <input type="button" value="dislike" ng-click="dislikeCounter(course)"/>
-            </td>
+        <tbody>
+        <tr ng-repeat="student in studentDetails | limitTo:rowFilter">
+            <td>{{student.sName | uppercase}}</td>
+            <td>{{student.sGender | lowercase}}</td>
+            <td>{{student.sBirth | date:"MM/dd/yy"}}</td>
+            <td>{{student.sSalary| number:2}}</td>
+            <td>{{student.sSalary | currency:"$":1}}</td>
         </tr>
         </tbody>
     </table>

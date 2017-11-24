@@ -9,23 +9,21 @@
 </head>
 <body>
 <div ng-controller="cntrl">
-    Search here: <input type="text" placeholder="search student" ng-model="searchText.sName" />
+    Search here: <input type="text" placeholder="search student" ng-model="searchText" />
     <table>
         <thead>
         <tr>
             <th>Name</th>
             <th>Gender</th>
-            <th>Age</th>
-            <th>Salary (numerics)</th>
+            <th>Place</th>
             <th>Salary (currency)</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="student in studentDetails | filter:searchText">
+        <tr ng-repeat="student in studentDetails | filter:search">
             <td>{{student.sName | uppercase}}</td>
-            <td>{{student.sGender | lowercase}}</td>
-            <td>{{student.sBirth | date:"MM/dd/yy"}}</td>
-            <td>{{student.sSalary| number:2}}</td>
+            <td>{{student.sGender | uppercase}}</td>
+            <td>{{student.sCity }}</td>
             <td>{{student.sSalary | currency:"$":1}}</td>
         </tr>
         </tbody>

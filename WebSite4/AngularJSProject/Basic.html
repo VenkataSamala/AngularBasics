@@ -9,19 +9,19 @@
 </head>
 <body>
 <div ng-controller="cntrl">
-  
+    Search here: <input type="text" placeholder="search student" ng-model="searchText" />
     <table>
         <thead>
         <tr>
-            <th ng-click="sortData('sName')">Name <div ng-model="sortClass('sName')"></div></th>
-            <th ng-click="sortData('sGender')">Gender<div ng-model="sortClass('sGender')"></div></th>
-            <th ng-click="sortData('sBirth')">Date of Birth<div ng-model="sortClass('sBirth')"></div></th>
-            <th ng-click="sortData('sSalary')">Salary (numerics)<div ng-model="sortClass('sSalary')"></div></th>
-            <th ng-click="sortData('sSalary')">Salary (currency)<div ng-model="sortClass('sSalary')"></div></th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Salary (numerics)</th>
+            <th>Salary (currency)</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="student in studentDetails | orderBy:sortColumn:reverseSort">
+        <tr ng-repeat="student in studentDetails | filter:searchText">
             <td>{{student.sName | uppercase}}</td>
             <td>{{student.sGender | lowercase}}</td>
             <td>{{student.sBirth | date:"MM/dd/yy"}}</td>

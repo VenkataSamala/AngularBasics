@@ -14,6 +14,19 @@ var myApp = angular.module("myModule", [])
                 { sName: "Rita", sBirth: new Date("January 17, 1993"), sGender: "Female", sSalary: 100500.50 }
             ];
             $scope.studentDetails = studentDetails;
-            $scope.rowFilter = 3;
+            $scope.sortColumn = "sName";
+            $scope.reverseSort = false;
+
+            $scope.sortData = function(column) {
+                $scope.reverseSort = ($scope.sortColumn == column) ? !$scope.reverseSort : false;
+                $scope.sortColumn = column;
+            }
+
+            $scope.sortClass = function(column) {
+                if ($scope.sortColumn == column) {
+                    return $scope.reverseSort ? 'arrow-down' : 'arrow-up';
+                }
+                return "";
+            };
         });
 

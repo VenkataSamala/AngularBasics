@@ -9,19 +9,19 @@
 </head>
 <body>
 <div ng-controller="cntrl">
-    Number of Rows: <input type="number" step="1" min="0" max="5" ng-model="rowFilter" />
+  
     <table>
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Date of Birth</th>
-            <th>Salary (numerics)</th>
-            <th>Salary (currency)</th>
+            <th ng-click="sortData('sName')">Name <div ng-model="sortClass('sName')"></div></th>
+            <th ng-click="sortData('sGender')">Gender<div ng-model="sortClass('sGender')"></div></th>
+            <th ng-click="sortData('sBirth')">Date of Birth<div ng-model="sortClass('sBirth')"></div></th>
+            <th ng-click="sortData('sSalary')">Salary (numerics)<div ng-model="sortClass('sSalary')"></div></th>
+            <th ng-click="sortData('sSalary')">Salary (currency)<div ng-model="sortClass('sSalary')"></div></th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="student in studentDetails | limitTo:rowFilter">
+        <tr ng-repeat="student in studentDetails | orderBy:sortColumn:reverseSort">
             <td>{{student.sName | uppercase}}</td>
             <td>{{student.sGender | lowercase}}</td>
             <td>{{student.sBirth | date:"MM/dd/yy"}}</td>
